@@ -1,0 +1,8 @@
+<div>
+    <h2>Message Form</h2>
+    <form (submit)="submitMessage()">
+      <textarea [(ngModel)]="messageContent" name="messageContent" rows="4" cols="50" placeholder="Enter your message"></textarea>
+      <br>
+      <button type="submit">Submit</button>
+    </form>
+</div>  

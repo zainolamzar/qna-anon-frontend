@@ -1,0 +1,9 @@
+<div>
+  <h2>Admin Dashboard</h2>
+  <ul>
+    <li *ngFor="let message of messages">
+      <a [routerLink]="['/admin-message-detail', message._id]">{{ message.content }}</a>
+    </li>
+  </ul>
+  <button (click)="logout()">Logout</button>
+</div>

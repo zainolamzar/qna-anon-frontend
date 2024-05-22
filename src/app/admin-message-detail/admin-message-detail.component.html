@@ -1,0 +1,10 @@
+<div *ngIf="errMessage">
+  <h2>{{ errMessage }}</h2>
+  <button (click)="goBack()">Back to Dashboard</button>
+</div>
+
+<div *ngIf="!errMessage && message">
+  <h2>Message Details</h2>
+  <p><strong>Content:</strong> {{ message.content }}</p>
+  <button (click)="goBack()">Back to Dashboard</button>
+</div>

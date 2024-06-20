@@ -1,4 +1,3 @@
-/* Define colors and basic styling */
 .message-detail-container {
     background-color: #f4f4f9; /* Light Gray */
     color: #333333; /* Dark Gray */
@@ -15,6 +14,10 @@
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
+    display: flex; /* Use flexbox for layout */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    text-align: center; /* Center text */
 }
 
 .error-section {
@@ -26,31 +29,86 @@
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for details */
 }
 
-.message-section h2 {
-    color: #1a73e8; /* Professional Blue */
-    margin-bottom: 10px;
+.detailCard {
+    width: 100%; /* Expand to full width */
+    background: linear-gradient(to right, #1a73e8, #9ac0f1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    padding: 20px; /* Add padding for better spacing */
+    box-sizing: border-box; /* Include padding in width calculation */
+    border-radius: 10px; /* Add border radius */
 }
 
-.message-section p {
-    margin-bottom: 15px;
+.detailHeading {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: rgb(241, 241, 241);
+    z-index: 2;
+    margin-top: 0; /* Remove default margin */
 }
 
-.message-section button {
-    background-color: #1a73e8; /* Professional Blue */
+.detailDescDiv {
+    background-color: #fafafa;
+    width: 100%; /* Expand to full width */
+    padding: 10px; /* Adjust padding as needed */
+    box-sizing: border-box; /* Include padding in width calculation */
+    z-index: 2;
+    word-wrap: break-word; /* Wrap long words */
+    border-radius: 10px; /* Add border radius */
+}
+
+.detailDescription {
+    font-size: 0.9em;
+    color: #333333;
+    z-index: 2;
+    margin: 0; /* Remove default margin */
+    max-width: 100%; /* Ensure text does not exceed container width */
+}
+
+.download-button {
+    background-color: #11c11d; /* Professional Blue */
     color: #ffffff; /* White */
-    padding: 10px 20px;
+    padding: 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    width: 30%;
+    transition: background-color 0.3s ease; /* Smooth transition */
+    margin-bottom: 5px;
+}
+
+.download-button:hover {
+    background-color: #00ae0c; /* Darker Blue for hover */
+}
+
+.download-button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #038e0c; /* Blue shadow on focus */
+}
+
+.back-button {
+    background-color: #1a73e8; /* Professional Blue */
+    color: #ffffff; /* White */
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 30%;
     transition: background-color 0.3s ease; /* Smooth transition */
 }
 
-.message-section button:hover {
+.back-button:hover {
     background-color: #1557b2; /* Darker Blue for hover */
 }
 
-.message-section button:focus {
+.back-button:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(26, 115, 232, 0.5); /* Blue shadow on focus */
 }

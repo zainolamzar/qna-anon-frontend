@@ -7,8 +7,13 @@
 
   <!-- Message Details Section -->
   <div *ngIf="!errMessage && message" class="message-section detail-section">
-    <h2>Message Details</h2>
-    <p><strong>Content:</strong> {{ message.content }}</p>
-    <button (click)="goBack()">Back to Dashboard</button>
+    <div class="detailCard" #detailCard>
+      <p class="detailHeading"><strong>Moh Ler Tanya?!</strong></p>
+      <div class="detailDescDiv">
+        <p class="detailDescription">{{ message.content }}</p>
+      </div>
+    </div>
+    <button class="download-button" (click)="downloadCard()">Download</button>
+    <button class="back-button" (click)="goBack()">Back</button>
   </div>
 </div>

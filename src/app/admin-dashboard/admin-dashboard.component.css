@@ -63,3 +63,10 @@
     outline: none;
     box-shadow: 0 0 5px rgba(26, 115, 232, 0.5); /* Blue shadow on focus */
 }
+
+.truncate-text {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

@@ -4,9 +4,11 @@
     <button (click)="logout()">Logout</button>
   </div>
   <ul>
-    <li *ngFor="let message of messages" [ngClass]="{ 'opened-message': message.opened }">
+    <li *ngFor="let message of messages">
       <a [routerLink]="['/admin-message-detail', message._id]">
-        {{ message.content }}
+        <span [ngClass]="{'truncate-text': message.content.length > 50}">
+          {{ message.content | slice:0:50 }}{{ message.content.length > 50 ? '...' : '' }}
+        </span>
       </a>
     </li>
   </ul>

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MessageService } from '../services/message/message.service';
+import { SnackbarService } from '../services/snackbar/snackbar.service'; // Import the SnackbarService
 
 @Component({
   selector: 'app-message-form',
@@ -9,16 +10,19 @@ import { MessageService } from '../services/message/message.service';
 export class MessageFormComponent {
   messageContent: string = '';
 
-  constructor(private messageService: MessageService) { }
+  constructor(
+    private messageService: MessageService,
+    private snackbarService: SnackbarService // Inject the SnackbarService
+  ) { }
 
   submitMessage(): void {
     if (!this.messageContent.trim()) {
-      alert('Please enter a message.');
+      this.snackbarService.showError('Please enter a message.');
       return;
     }
     
     if (this.messageContent.split(' ').length > 100) {
-      alert('Message should not exceed 100 words.');
+      this.snackbarService.showError('Message should not exceed 100 words.');
       return;
     }
 
@@ -26,12 +30,12 @@ export class MessageFormComponent {
 
     this.messageService.submitMessage(messageData).subscribe(
       () => {
-        console.log('Message submitted successfully');
+        this.snackbarService.showSuccess('Message submitted successfully.');
         this.messageContent = ''; // Clear the message input field
-        window.location.reload(); // Refresh back to the root route
       },
       (error) => {
         console.error('Error submitting message:', error);
+        this.snackbarService.showError('Failed to submit message.');
       }
     );
   }

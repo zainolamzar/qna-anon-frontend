@@ -1,9 +1,13 @@
-<div>
-  <h2>Admin Dashboard</h2>
+<div class="admin-dashboard-container">
+  <div class="header">
+    <h2>Admin Dashboard</h2>
+    <button (click)="logout()">Logout</button>
+  </div>
   <ul>
-    <li *ngFor="let message of messages">
-      <a [routerLink]="['/admin-message-detail', message._id]">{{ message.content }}</a>
+    <li *ngFor="let message of messages" [ngClass]="{ 'opened-message': message.opened }">
+      <a [routerLink]="['/admin-message-detail', message._id]">
+        {{ message.content }}
+      </a>
     </li>
   </ul>
-  <button (click)="logout()">Logout</button>
 </div>

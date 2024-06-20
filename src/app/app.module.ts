@@ -13,6 +13,7 @@ import { AdminMessageDetailComponent } from './admin-message-detail/admin-messag
 import { MessageService } from './services/message/message.service';
 import { AuthService } from './services/auth/auth.service';
 import { AuthGuard } from './services/auth/auth.guard';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { AuthGuard } from './services/auth/auth.guard';
     MessageService,
     AuthService,
     AuthGuard,
-    provideHttpClient(withFetch())
+    provideHttpClient(withFetch()),
+    provideAnimationsAsync()
   ],
   bootstrap: [AppComponent]
 })

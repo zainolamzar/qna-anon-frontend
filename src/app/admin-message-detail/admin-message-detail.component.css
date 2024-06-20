@@ -1,0 +1,56 @@
+/* Define colors and basic styling */
+.message-detail-container {
+    background-color: #f4f4f9; /* Light Gray */
+    color: #333333; /* Dark Gray */
+    padding: 20px;
+    border: 1px solid #ddd; /* Light Gray Border */
+    border-radius: 10px;
+    max-width: 800px; /* Adjust width as needed */
+    margin: 50px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.message-section {
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.error-section {
+    background-color: #f44336; /* Red for error */
+}
+
+.detail-section {
+    background-color: #ffffff; /* White for details */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for details */
+}
+
+.message-section h2 {
+    color: #1a73e8; /* Professional Blue */
+    margin-bottom: 10px;
+}
+
+.message-section p {
+    margin-bottom: 15px;
+}
+
+.message-section button {
+    background-color: #1a73e8; /* Professional Blue */
+    color: #ffffff; /* White */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.message-section button:hover {
+    background-color: #1557b2; /* Darker Blue for hover */
+}
+
+.message-section button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5); /* Blue shadow on focus */
+}

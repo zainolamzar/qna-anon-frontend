@@ -1,0 +1,65 @@
+/* Define colors and basic styling */
+.admin-dashboard-container {
+    background-color: #f4f4f9; /* Light Gray */
+    color: #333333; /* Dark Gray */
+    padding: 20px;
+    border: 1px solid #ddd; /* Light Gray Border */
+    border-radius: 10px;
+    max-width: 800px; /* Wider for dashboard */
+    margin: 50px auto;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+.admin-dashboard-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.admin-dashboard-container .header h2 {
+    color: #1a73e8; /* Professional Blue */
+    margin: 0; /* Remove default margin */
+}
+
+.admin-dashboard-container ul {
+    list-style-type: none; /* Remove default list styling */
+    padding: 0;
+}
+
+.admin-dashboard-container li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd; /* Light Gray Border */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.admin-dashboard-container li a {
+    text-decoration: none;
+    color: #1a73e8; /* Professional Blue */
+    display: block;
+}
+
+.admin-dashboard-container li a:hover {
+    background-color: #f0f0f0; /* Slightly darker on hover */
+}
+
+.admin-dashboard-container button {
+    background-color: #1a73e8; /* Professional Blue */
+    color: #ffffff; /* White */
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.admin-dashboard-container button:hover {
+    background-color: #1557b2; /* Darker Blue for hover */
+}
+
+.admin-dashboard-container button:focus {
+    outline: none;
+    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5); /* Blue shadow on focus */
+}

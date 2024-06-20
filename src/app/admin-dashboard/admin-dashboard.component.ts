@@ -27,7 +27,7 @@ export class AdminDashboardComponent implements OnInit {
   loadMessages(): void {
     this.messageService.getMessages().subscribe(
       (data) => {
-        this.messages = data;
+        this.messages = data.map(message => ({ ...message, opened: false }));
       },
       (error) => {
         console.error('Error loading messages:', error);

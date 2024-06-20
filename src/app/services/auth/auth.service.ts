@@ -13,7 +13,7 @@ export class AuthService {
 
   login(id:null, username: string, password: string): Promise<boolean> {
     return new Promise<boolean>((resolve, reject) => {
-      this.http.post<any>('http://localhost:5000/api/users/login', { id, username, password }).subscribe(
+      this.http.post<any>('https://qna-anonymous-server.onrender.com/api/users/login', { id, username, password }).subscribe(
         (response) => {
           if (response && response.success) {
             this.isLoggedIn = true;

@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MessageService {
-  private apiUrl = 'http://localhost:5000/api/messages';
+  private apiUrl = 'https://qna-anonymous-server.onrender.com/api/messages';
 
   constructor(private http: HttpClient) { }
 

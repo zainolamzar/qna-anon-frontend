@@ -1,7 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(135deg, #e9f0fb, #f4f4f9); /* Light blue → light gray */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
 
 /* Snackbar Overlay */
 ::ng-deep .mat-snack-bar-container {

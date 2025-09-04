@@ -3,13 +3,24 @@
     <h2>Admin Dashboard</h2>
     <button (click)="logout()">Logout</button>
   </div>
+
+  <div class="actions">
+    <label>
+      <input type="checkbox" (change)="toggleSelectAll($event)"> Select All
+    </label>
+    <button (click)="deleteSelected()" [disabled]="!hasSelected()">Delete Selected</button>
+    <button (click)="deleteAll()">Delete All</button>
+  </div>
+
   <ul>
     <li *ngFor="let message of messages">
+      <input type="checkbox" [(ngModel)]="message.selected">
       <a [routerLink]="['/admin-message-detail', message._id]">
         <span [ngClass]="{'truncate-text': message.content.length > 50}">
           {{ message.content | slice:0:50 }}{{ message.content.length > 50 ? '...' : '' }}
         </span>
       </a>
+      <button class="delete-btn" (click)="deleteMessage(message._id)">Delete</button>
     </li>
   </ul>
 </div>

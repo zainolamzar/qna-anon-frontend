@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth/auth.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-admin-login',
     templateUrl: './admin-login.component.html',
     styleUrls: ['./admin-login.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [FormsModule]
 })
 export class AdminLoginComponent {
   constructor(private authService: AuthService, private router: Router) { }

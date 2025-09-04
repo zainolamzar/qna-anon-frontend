@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import { MessageService } from '../services/message/message.service';
 import { SnackbarService } from '../services/snackbar/snackbar.service'; // Import the SnackbarService
+import { FormsModule } from '@angular/forms';
 
 @Component({
     selector: 'app-message-form',
+    imports: [FormsModule],
     templateUrl: './message-form.component.html',
     styleUrls: ['./message-form.component.css'],
-    standalone: false
+    standalone: true
 })
 export class MessageFormComponent {
   messageContent: string = '';

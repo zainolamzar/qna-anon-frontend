@@ -18,7 +18,20 @@ export class MessageService {
     return this.http.get<any[]>(this.apiUrl);
   }
 
-  getMessageById(id: string): Observable<any>{
+  getMessageById(id: string): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
+
+  deleteMessage(id: string): Observable<any> {
+    return this.http.delete<any>(`${this.apiUrl}/${id}`);
+  }
+
+  deleteAllMessages(): Observable<any> {
+    return this.http.delete<any>(this.apiUrl);
+  }
+
+  deleteSelectedMessages(ids: string[]): Observable<any> {
+    return this.http.post<any>(`${this.apiUrl}/bulk-delete`, { ids });
+  }
+
 }

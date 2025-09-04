@@ -9,6 +9,7 @@
   <div *ngIf="!errMessage && message" class="message-section detail-section">
     <div class="detailCard" #detailCard>
       <p class="detailHeading"><strong>Moh Ler Tanya?!</strong></p>
+      <p class="detailAuthor">By Zain Coder</p>
       <div class="detailDescDiv">
         <p class="detailDescription">{{ message.content }}</p>
       </div>
@@ -18,19 +19,5 @@
       <button class="download-button" (click)="downloadCard()">Download</button>
       <button class="back-button" (click)="goBack()">Back</button>
     </div>
-  </div>
-</div>
-
-<!-- Hidden export card only for download -->
-<div #exportCard style="display: none;">
-  <div class="exportCard" #detailCard>
-      <p class="exportHeading"><strong>Moh Ler Tanya?!</strong></p>
-      <div class="exportDescDiv">
-        <p class="exportDescription">{{ message.content }}</p>
-      </div>
-  </div>
-  <div class="exportFooter">
-    <p>Developed by Zain Coder</p>
-    <p>Built with Angular · Deployed on Vercel</p>
   </div>
 </div>

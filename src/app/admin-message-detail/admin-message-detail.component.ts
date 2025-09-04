@@ -5,9 +5,10 @@ import { AuthService } from '../services/auth/auth.service';
 import * as htmlToImage from 'html-to-image';
 
 @Component({
-  selector: 'app-admin-message-detail',
-  templateUrl: './admin-message-detail.component.html',
-  styleUrls: ['./admin-message-detail.component.css']
+    selector: 'app-admin-message-detail',
+    templateUrl: './admin-message-detail.component.html',
+    styleUrls: ['./admin-message-detail.component.css'],
+    standalone: false
 })
 export class AdminMessageDetailComponent implements OnInit {
   message: any;

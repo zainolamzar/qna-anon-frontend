@@ -2,12 +2,13 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from '../services/message/message.service';
 import { AuthService } from '../services/auth/auth.service';
-import html2canvas from 'html2canvas';
+import * as htmlToImage from 'html-to-image';
 
 @Component({
-  selector: 'app-admin-message-detail',
-  templateUrl: './admin-message-detail.component.html',
-  styleUrls: ['./admin-message-detail.component.css']
+    selector: 'app-admin-message-detail',
+    templateUrl: './admin-message-detail.component.html',
+    styleUrls: ['./admin-message-detail.component.css'],
+    standalone: false
 })
 export class AdminMessageDetailComponent implements OnInit {
   message: any;
@@ -56,17 +57,18 @@ export class AdminMessageDetailComponent implements OnInit {
 
   downloadCard(): void {
     const detailCard = this.detailCardRef.nativeElement;
-    html2canvas(detailCard).then(canvas => {
-      // Convert canvas to PNG image data
-      const imgData = canvas.toDataURL('image/png');
 
-      // Create temporary link element
-      const a = document.createElement('a');
-      a.href = imgData;
-      a.download = 'message-detail.png'; // Set the filename for download
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    });
+    htmlToImage.toPng(detailCard)
+      .then((dataUrl: string) => {
+        const a = document.createElement('a');
+        a.href = dataUrl;
+        a.download = 'message-detail.png';
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+      })
+      .catch((error: any) => {
+        console.error('Error exporting image:', error);
+      });
   }
 }

@@ -1,114 +1,144 @@
+/* Container */
 .message-detail-container {
-    background-color: #f4f4f9; /* Light Gray */
-    color: #333333; /* Dark Gray */
+    background-color: #f4f4f9;
+    color: #333;
     padding: 20px;
-    border: 1px solid #ddd; /* Light Gray Border */
-    border-radius: 10px;
-    max-width: 800px; /* Adjust width as needed */
-    margin: 50px auto;
+    border-radius: 12px;
+    max-width: 900px;
+    margin: 40px auto;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 0.5s ease-in-out;
 }
 
+/* Section styling */
 .message-section {
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 5px;
-    display: flex; /* Use flexbox for layout */
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    text-align: center; /* Center text */
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .error-section {
-    background-color: #f44336; /* Red for error */
+    background-color: #f44336;
+    color: #fff;
 }
 
 .detail-section {
-    background-color: #ffffff; /* White for details */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle shadow for details */
+    background-color: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
+/* Card */
 .detailCard {
-    width: 100%; /* Expand to full width */
-    background: linear-gradient(to right, #1a73e8, #9ac0f1);
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center content horizontally */
-    justify-content: center; /* Center content vertically */
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 30px;
-    padding: 20px; /* Add padding for better spacing */
-    box-sizing: border-box; /* Include padding in width calculation */
-    border-radius: 10px; /* Add border radius */
+    width: 400px;
+    background: linear-gradient(135deg, #1a73e8, #6eaafc);
+    border-radius: 15px;
+    padding: 25px 20px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
+    text-align: center;
+    animation: slideUp 0.5s ease-in-out;
 }
 
 .detailHeading {
-    font-size: 1.5em;
+    font-size: 1.6em;
     font-weight: 600;
-    color: rgb(241, 241, 241);
-    z-index: 2;
-    margin-top: 0; /* Remove default margin */
+    color: #fff;
+    margin-bottom: 15px;
 }
 
 .detailDescDiv {
     background-color: #fafafa;
-    width: 100%; /* Expand to full width */
-    padding: 10px; /* Adjust padding as needed */
-    box-sizing: border-box; /* Include padding in width calculation */
-    z-index: 2;
-    word-wrap: break-word; /* Wrap long words */
-    border-radius: 10px; /* Add border radius */
+    border-radius: 10px;
+    padding: 15px;
+    word-wrap: break-word;
+    box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .detailDescription {
-    font-size: 0.9em;
-    color: #333333;
-    z-index: 2;
-    margin: 0; /* Remove default margin */
-    max-width: 100%; /* Ensure text does not exceed container width */
+    font-size: 1em;
+    color: #333;
+    margin: 0;
 }
 
-.download-button {
-    background-color: #11c11d; /* Professional Blue */
-    color: #ffffff; /* White */
-    padding: 15px;
+/* Buttons */
+.action-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.download-button,
+.back-button {
+    padding: 14px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: 500;
     cursor: pointer;
-    font-size: 16px;
-    width: 30%;
-    transition: background-color 0.3s ease; /* Smooth transition */
-    margin-bottom: 5px;
+    min-width: 120px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Specific button colors */
+.download-button {
+    background-color: #11c11d;
+    color: #fff;
+}
 .download-button:hover {
-    background-color: #00ae0c; /* Darker Blue for hover */
-}
-
-.download-button:focus {
-    outline: none;
-    box-shadow: 0 0 5px #038e0c; /* Blue shadow on focus */
+    background-color: #0da317;
+    transform: translateY(-2px);
 }
 
 .back-button {
-    background-color: #1a73e8; /* Professional Blue */
-    color: #ffffff; /* White */
-    padding: 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    width: 30%;
-    transition: background-color 0.3s ease; /* Smooth transition */
+    background-color: #1a73e8;
+    color: #fff;
 }
-
 .back-button:hover {
-    background-color: #1557b2; /* Darker Blue for hover */
+    background-color: #1557b2;
+    transform: translateY(-2px);
 }
 
-.back-button:focus {
-    outline: none;
-    box-shadow: 0 0 5px rgba(26, 115, 232, 0.5); /* Blue shadow on focus */
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .message-detail-container {
+        margin: 20px;
+        padding: 15px;
+    }
+
+    .detailHeading {
+        font-size: 1.3em;
+    }
+
+    .detailDescription {
+        font-size: 0.95em;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .download-button,
+    .back-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
 }

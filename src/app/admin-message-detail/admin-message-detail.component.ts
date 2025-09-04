@@ -3,12 +3,14 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MessageService } from '../services/message/message.service';
 import { AuthService } from '../services/auth/auth.service';
 import * as htmlToImage from 'html-to-image';
+import { CommonModule } from '@angular/common';
 
 @Component({
     selector: 'app-admin-message-detail',
     templateUrl: './admin-message-detail.component.html',
     styleUrls: ['./admin-message-detail.component.css'],
-    standalone: false
+    standalone: true,
+    imports: [CommonModule]
 })
 export class AdminMessageDetailComponent implements OnInit {
   message: any;

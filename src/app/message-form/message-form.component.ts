@@ -3,9 +3,10 @@ import { MessageService } from '../services/message/message.service';
 import { SnackbarService } from '../services/snackbar/snackbar.service'; // Import the SnackbarService
 
 @Component({
-  selector: 'app-message-form',
-  templateUrl: './message-form.component.html',
-  styleUrls: ['./message-form.component.css']
+    selector: 'app-message-form',
+    templateUrl: './message-form.component.html',
+    styleUrls: ['./message-form.component.css'],
+    standalone: false
 })
 export class MessageFormComponent {
   messageContent: string = '';
